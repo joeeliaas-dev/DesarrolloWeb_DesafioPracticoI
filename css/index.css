@@ -25,6 +25,11 @@ header {
     margin: 0;
 }
 
+#logo img {
+    height: 46px;
+    display: block;
+}
+
 nav a {
     color: #f0f0f0;
     text-decoration: none;
@@ -40,7 +45,7 @@ nav a:hover {
     text-align: center;
     padding: 100px 20px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
-        url("https://images.unsplash.com/photo-1520045892732-304bc3ac5d8e?auto=format&fit=crop&w=1400&q=80");
+        url("../img/ig-grid-1.png");
     background-size: cover;
     background-position: center;
 }
@@ -104,10 +109,11 @@ nav a:hover {
 }
 
 .galeria img {
-    width: 200px;
-    height: 150px;
-    object-fit: cover;
+    width: 320px;
+    max-width: 100%;
+    height: auto;
     border-radius: 5px;
+    border: 1px solid #333333;
 }
 
 footer {

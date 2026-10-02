@@ -23,6 +23,11 @@ header {
     margin: 0;
 }
 
+#logo img {
+    height: 46px;
+    display: block;
+}
+
 nav a {
     color: #f0f0f0;
     text-decoration: none;
