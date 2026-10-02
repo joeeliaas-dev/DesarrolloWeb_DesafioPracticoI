@@ -1,0 +1,127 @@
+/* Estilos para la página de inicio de Addikt Skate Shop */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111111;
+    color: #f0f0f0;
+    line-height: 1.6;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px 30px;
+    background-color: #000000;
+    border-bottom: 2px solid #ffd200;
+}
+
+#logo {
+    font-family: 'Oswald', sans-serif;
+    color: #ffd200;
+    font-size: 1.6em;
+    margin: 0;
+}
+
+nav a {
+    color: #f0f0f0;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffd200;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+        url("https://images.unsplash.com/photo-1520045892732-304bc3ac5d8e?auto=format&fit=crop&w=1400&q=80");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero h2 {
+    font-family: 'Oswald', sans-serif;
+    color: #ffd200;
+    font-size: 2.2em;
+}
+
+.boton {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 25px;
+    background-color: #ffd200;
+    color: #111111;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.boton:hover {
+    background-color: #e6bd00;
+}
+
+.bloque {
+    width: 85%;
+    max-width: 900px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.bloque h2 {
+    font-family: 'Oswald', sans-serif;
+    color: #ffd200;
+    border-bottom: 2px solid #333333;
+    padding-bottom: 8px;
+}
+
+.lista-categorias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+}
+
+.lista-categorias li {
+    background-color: #1a1a1a;
+    border: 1px solid #333333;
+    padding: 10px 18px;
+    border-radius: 5px;
+}
+
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.galeria img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+footer {
+    text-align: center;
+    background-color: #000000;
+    padding: 30px 20px;
+    margin-top: 40px;
+}
+
+footer h2 {
+    font-family: 'Oswald', sans-serif;
+    color: #ffd200;
+}
+
+a {
+    color: #ffd200;
+}
