@@ -1,0 +1,131 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111111;
+    color: #f0f0f0;
+    line-height: 1.6;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px 30px;
+    background-color: #000000;
+    border-bottom: 2px solid #ffd200;
+}
+
+#logo {
+    font-family: 'Oswald', sans-serif;
+    color: #ffd200;
+    font-size: 1.6em;
+    margin: 0;
+}
+
+nav a {
+    color: #f0f0f0;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffd200;
+}
+
+.bloque {
+    width: 85%;
+    max-width: 900px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.bloque h2 {
+    font-family: 'Oswald', sans-serif;
+    color: #ffd200;
+    border-bottom: 2px solid #333333;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+
+.contenedor-formulario {
+    background-color: #1a1a1a;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+.formulario-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.grupo-form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.grupo-form label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #ffd200;
+}
+
+.grupo-form input,
+.grupo-form select,
+.grupo-form textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #000000;
+    border: 1px solid #333333;
+    color: #f0f0f0;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+    box-sizing: border-box; 
+}
+
+.grupo-form input:focus,
+.grupo-form select:focus,
+.grupo-form textarea:focus {
+    outline: none;
+    border-color: #ffd200;
+}
+
+.boton-enviar {
+    background-color: #ffd200;
+    color: #111111;
+    border: none;
+    padding: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.boton-enviar:hover {
+    background-color: #e6bd00;
+}
+
+/* Estilos del footer */
+footer {
+    text-align: center;
+    background-color: #000000;
+    padding: 30px 20px;
+    margin-top: 40px;
+}
+
+footer h2 {
+    font-family: 'Oswald', sans-serif;
+    color: #ffd200;
+}
