@@ -14,6 +14,8 @@ import {
   cargarProductosIniciales,
   obtenerTodosLosPedidos,
   cambiarEstadoPedido,
+  obtenerMensajes,
+  eliminarMensaje,
 } from "../services/dbService.js";
 import { Producto, formatearPrecio } from "../models/Producto.js";
 import { CATEGORIAS, ESTADOS_PEDIDO, STOCK_CRITICO } from "../constantes.js";
@@ -27,6 +29,7 @@ const bloqueo = document.querySelector("#acceso-denegado");
 const zonaMetricas = document.querySelector("#metricas");
 const tablaProductos = document.querySelector("#tabla-productos");
 const tablaPedidos = document.querySelector("#tabla-pedidos");
+const listaMensajes = document.querySelector("#lista-mensajes");
 const buscadorAdmin = document.querySelector("#buscar-admin");
 const filtroEstado = document.querySelector("#filtro-estado");
 const dialogo = document.querySelector("#dialogo-producto");
@@ -36,6 +39,7 @@ const vistaPrevia = document.querySelector("#vista-previa");
 // ---------- Estado ----------
 let productos = [];
 let pedidos = [];
+let mensajes = [];
 let idEnEdicion = null; // null = creando, texto = editando
 
 // ---------- Inicio: verificar el rol ----------
@@ -55,7 +59,7 @@ async function cargarTodo() {
   mostrarCargando(tablaPedidos, "Cargando reservas...");
   try {
     // Las dos consultas al mismo tiempo
-    [productos, pedidos] = await Promise.all([obtenerProductos(), obtenerTodosLosPedidos()]);
+    [productos, pedidos, mensajes] = await Promise.all([obtenerProductos(), obtenerTodosLosPedidos(), obtenerMensajes()]);
     renderizarTodo();
   } catch (error) {
     console.error(error);
@@ -67,6 +71,7 @@ function renderizarTodo() {
   renderizarMetricas();
   renderizarProductos();
   renderizarPedidos();
+  renderizarMensajes();
 }
 
 /* ========== MÉTRICAS (procesamiento de datos) ========== */
@@ -197,6 +202,47 @@ function crearFilaPedido(pedido) {
       <td>${formatearPrecio(pedido.total)}${pedido.descuento > 0 ? `<small>desc. ${formatearPrecio(pedido.descuento)}</small>` : ""}</td>
       <td>${control}</td>
     </tr>`;
+}
+
+/* ========== MENSAJES DE CONTACTO ========== */
+const ASUNTOS = {
+  cotizacion: "Cotizar armado de skate",
+  envios: "Dudas sobre envíos",
+  disponibilidad: "Disponibilidad de productos",
+  otro: "Otro",
+};
+
+function renderizarMensajes() {
+  if (mensajes.length === 0) {
+    mostrarVacio(listaMensajes, "Sin mensajes", "Los mensajes del formulario de contacto aparecerán aquí.");
+    return;
+  }
+  listaMensajes.innerHTML = mensajes
+    .map(
+      (m) => `
+      <article class="mensaje">
+        <header>
+          <strong>${escaparHTML(m.nombre)}</strong>
+          <a href="mailto:${escaparHTML(m.email)}">${escaparHTML(m.email)}</a>
+          <span>${ASUNTOS[m.asunto] ?? escaparHTML(m.asunto)} · ${formatearFecha(m.creado)}</span>
+        </header>
+        <p>${escaparHTML(m.mensaje)}</p>
+        <button type="button" class="btn-tabla btn-tabla--peligro" data-borrar-mensaje="${m.id}">Eliminar</button>
+      </article>`
+    )
+    .join("");
+}
+
+async function borrarMensaje(id) {
+  if (!confirm("¿Eliminar este mensaje?")) return;
+  try {
+    await eliminarMensaje(id);
+    mensajes = mensajes.filter((m) => m.id !== id);
+    renderizarMensajes();
+    mostrarAviso("Mensaje eliminado.", "exito");
+  } catch (error) {
+    mostrarAviso("No se pudo eliminar: " + error.message, "error");
+  }
 }
 
 /* ========== FORMULARIO DE PRODUCTO (crear / editar) ========== */
@@ -380,6 +426,11 @@ function escucharEventos() {
   tablaPedidos.addEventListener("change", (evento) => {
     const select = evento.target.closest("[data-pedido]");
     if (select && select.value) actualizarEstado(select.dataset.pedido, select.value);
+  });
+
+  listaMensajes.addEventListener("click", (evento) => {
+    const boton = evento.target.closest("[data-borrar-mensaje]");
+    if (boton) borrarMensaje(boton.dataset.borrarMensaje);
   });
 
   buscadorAdmin.addEventListener("input", renderizarProductos);

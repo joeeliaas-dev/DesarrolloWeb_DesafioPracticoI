@@ -23,6 +23,7 @@ import {
 
 const productosRef = collection(db, "productos");
 const pedidosRef = collection(db, "pedidos");
+const mensajesRef = collection(db, "mensajes");
 
 /* ---------------- PRODUCTOS (CRUD) ---------------- */
 
@@ -142,4 +143,21 @@ export async function cambiarEstadoPedido(pedido, nuevoEstado) {
 // Más recientes primero (.sort sobre el arreglo en memoria)
 function ordenarPorFecha(pedidos) {
   return pedidos.sort((a, b) => (b.creado?.seconds ?? 0) - (a.creado?.seconds ?? 0));
+}
+
+/* ---------------- MENSAJES (CONTACTO) ---------------- */
+
+// Cualquier visitante puede enviar un mensaje desde contacto.html
+export function enviarMensaje({ nombre, email, asunto, mensaje }) {
+  return addDoc(mensajesRef, { nombre, email, asunto, mensaje, creado: serverTimestamp() });
+}
+
+// Solo el admin puede leerlos (las reglas lo exigen)
+export async function obtenerMensajes() {
+  const resultado = await getDocs(mensajesRef);
+  return ordenarPorFecha(resultado.docs.map((d) => ({ id: d.id, ...d.data() })));
+}
+
+export function eliminarMensaje(id) {
+  return deleteDoc(doc(db, "mensajes", id));
 }
