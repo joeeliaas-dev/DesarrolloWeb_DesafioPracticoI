@@ -1,122 +1,308 @@
-/* Estilos para la página de productos de Addikt Skate Shop */
+/* =========================================================
+   ADDIKT SKATESHOP — estilos del catálogo (productos.html)
+   ========================================================= */
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #111111;
-    color: #f0f0f0;
-    line-height: 1.6;
-    margin: 0;
+/* ---------- Encabezado de página ---------- */
+.pagina-hero {
+  padding: 72px 0 40px;
+  border-bottom: 1px solid var(--linea);
+  background:
+    radial-gradient(circle at 85% 20%, rgba(229, 65, 43, 0.18), transparent 45%),
+    var(--negro);
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 15px 30px;
-    background-color: #000000;
-    border-bottom: 2px solid #ffd200;
+.migas {
+  font-size: 0.85rem;
+  color: var(--gris);
+  margin-bottom: 16px;
 }
 
-#logo {
-    font-family: 'Oswald', sans-serif;
-    color: #ffd200;
-    font-size: 1.6em;
-    margin: 0;
+.migas a:hover {
+  color: var(--crema);
 }
 
-#logo img {
-    height: 46px;
-    display: block;
+.migas span {
+  margin: 0 6px;
 }
 
-nav a {
-    color: #f0f0f0;
-    text-decoration: none;
-    margin-left: 20px;
-    font-weight: bold;
+.pagina-hero__titulo {
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: clamp(3rem, 10vw, 6.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
 }
 
-nav a:hover {
-    color: #ffd200;
+.pagina-hero__titulo span {
+  color: var(--rojo);
 }
 
-.bloque {
-    width: 85%;
-    max-width: 900px;
-    margin: 40px auto;
-    text-align: center;
+.pagina-hero__texto {
+  margin-top: 20px;
+  max-width: 56ch;
+  color: var(--crema-2);
 }
 
-.bloque h2 {
-    font-family: 'Oswald', sans-serif;
-    color: #ffd200;
-    border-bottom: 2px solid #333333;
-    padding-bottom: 8px;
+/* ---------- Filtros por categoría (los crea js/ui/catalogoUI.js) ---------- */
+.filtros {
+  position: sticky;
+  top: var(--header-alto);
+  z-index: 30;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 20px 0 12px;
+  background: var(--negro);
+}
+
+.filtros::-webkit-scrollbar {
+  display: none;
+}
+
+.chip {
+  flex-shrink: 0;
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--linea);
+  background: transparent;
+  color: var(--crema-2);
+  font-family: var(--fuente-titulo);
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.chip:hover {
+  border-color: var(--crema);
+  color: var(--crema);
+}
+
+.chip--activo,
+.chip--activo:hover {
+  background: var(--crema);
+  border-color: var(--crema);
+  color: var(--negro);
+}
+
+/* ---------- Catálogo ---------- */
+.catalogo {
+  padding: 16px 0 80px;
 }
 
 .productos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
 }
 
 .producto {
-    background-color: #1a1a1a;
-    border: 1px solid #333333;
-    border-radius: 5px;
-    width: 220px;
-    padding: 10px;
+  display: flex;
+  flex-direction: column;
+  background: var(--negro-2);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+  overflow: hidden;
+  transition: transform 0.25s, border-color 0.25s;
+  animation: aparecer 0.35s ease backwards;
+}
+
+.producto:hover {
+  transform: translateY(-4px);
+  border-color: var(--crema-2);
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(8px); }
+}
+
+.producto__imagen {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--negro-3);
+}
+
+.producto__imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.producto:hover .producto__imagen img {
+  transform: scale(1.06);
+}
+
+.producto__badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--rojo);
+  color: #fff;
+  font-family: var(--fuente-titulo);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.producto__info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 18px;
+}
+
+.producto__marca {
+  font-family: var(--fuente-titulo);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rojo);
+}
+
+.producto__nombre {
+  margin-top: 4px;
+  font-family: var(--fuente-titulo);
+  font-weight: 700;
+  font-size: 1.08rem;
+  line-height: 1.25;
+}
+
+.producto__detalle {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: var(--gris);
+}
+
+.producto__pie {
+  margin-top: auto;
+  padding-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.producto__precio {
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.producto__btn {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--crema);
+  font-family: var(--fuente-titulo);
+  font-weight: 600;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+
+.producto__btn:hover {
+  background: var(--crema);
+  color: var(--negro);
+}
+
+.catalogo__nota {
+  margin-top: 32px;
+  font-size: 0.8rem;
+  color: var(--gris);
+}
+
+/* ---------- Cómo comprar ---------- */
+.como-comprar {
+  background: var(--crema);
+  color: var(--negro);
+}
+
+.como-comprar .seccion__etiqueta {
+  color: var(--rojo-osc);
+}
+
+.pasos {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.paso {
+  padding-top: 24px;
+  border-top: 3px solid var(--negro);
+}
+
+.paso__numero {
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--rojo);
+}
+
+.paso h3 {
+  margin-top: 12px;
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  font-size: 1.4rem;
+}
+
+.paso p {
+  margin-top: 6px;
+  color: #4a463e;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1080px) {
+  .productos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .productos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  /* los chips bajan de línea para que siempre se vea el activo */
+  .filtros {
+    position: static;
+    flex-wrap: wrap;
+  }
+
+  .pasos {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .productos {
+    gap: 12px;
+  }
+
+  .producto__info {
+    padding: 14px;
+  }
+
+  .producto__nombre {
+    font-size: 0.95rem;
+  }
+
+  .producto__pie {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .producto__btn {
     text-align: center;
-}
-
-.producto-img {
-    width: 100%;
-    height: 150px;
-    border-radius: 5px;
-    background-color: #000000;
-    background-repeat: no-repeat;
-    background-size: 400% 200%;
-}
-
-/* Las fotos vienen de las capturas de nuestro Instagram (@addikt_es).
-   g1 / g2 eligen la captura, c0-c3 la columna y r0-r1 la fila del producto. */
-.g1 {
-    background-image: url("../img/ig-grid-1.png");
-}
-
-.g2 {
-    background-image: url("../img/ig-grid-2.png");
-}
-
-.c0 { background-position-x: 0%; }
-.c1 { background-position-x: 33.333%; }
-.c2 { background-position-x: 66.666%; }
-.c3 { background-position-x: 100%; }
-
-.r0 { background-position-y: 0%; }
-.r1 { background-position-y: 100%; }
-
-.producto h3 {
-    font-size: 1em;
-    margin: 10px 0 5px;
-}
-
-.producto p {
-    color: #ffd200;
-    font-weight: bold;
-    margin: 0;
-}
-
-footer {
-    text-align: center;
-    background-color: #000000;
-    padding: 30px 20px;
-    margin-top: 40px;
-}
-
-footer h2 {
-    font-family: 'Oswald', sans-serif;
-    color: #ffd200;
+  }
 }

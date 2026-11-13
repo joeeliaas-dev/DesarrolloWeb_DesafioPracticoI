@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos | Addikt Skateshop</title>
+  <meta name="description" content="Catálogo de Addikt Skateshop: tablas, ruedas, trucks, completos, ropa y accesorios de skate en El Salvador.">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="canonical" href="https://addikt.web.app/productos">
+
+  <!-- Vista previa al compartir (WhatsApp, Facebook, X) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_SV">
+  <meta property="og:site_name" content="Addikt Skateshop">
+  <meta property="og:title" content="Productos | Addikt Skateshop">
+  <meta property="og:description" content="Catálogo de tablas, ruedas, trucks, completos, ropa y accesorios de skate en El Salvador.">
+  <meta property="og:url" content="https://addikt.web.app/productos">
+  <meta property="og:image" content="https://addikt.web.app/img/santa-cruz.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/productos.css">
+</head>
+<body>
+
+  <a href="#contenido" class="saltar">Saltar al contenido</a>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="header">
+    <div class="contenedor header__interior">
+      <a href="index.html" class="logo" aria-label="Addikt Skateshop - Inicio">
+        <span class="logo__palabra">Addikt<span class="logo__punto">.</span></span>
+        <span class="logo__lema">Skateshop since 2001</span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <ul class="nav__lista">
+          <li><a href="index.html" class="nav__enlace">Inicio</a></li>
+          <li><a href="productos.html" class="nav__enlace nav__enlace--activo">Productos</a></li>
+          <li><a href="index.html#nosotros" class="nav__enlace">Nosotros</a></li>
+          <li><a href="index.html#visitanos" class="nav__enlace">Visítanos</a></li>
+          <li><a href="https://ig.me/m/addikt_es" target="_blank" rel="noopener" class="btn btn--primario btn--chico">Escríbenos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ===================== ENCABEZADO DE PÁGINA ===================== -->
+    <section class="pagina-hero">
+      <div class="contenedor">
+        <nav class="migas" aria-label="Ruta">
+          <a href="index.html">Inicio</a> <span>/</span> Productos
+        </nav>
+        <h1 class="pagina-hero__titulo">Catálogo<span>.</span></h1>
+        <p class="pagina-hero__texto">
+          Tablas, ruedas, trucks, ropa y accesorios de las marcas que se ruedan.
+          ¿Te gustó algo? Pídelo por DM y te lo apartamos o enviamos.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== CATÁLOGO ===================== -->
+    <!-- Filtro solo con CSS: cada chip enlaza a un ancla (#tablas, #ruedas...)
+         y el selector :target oculta los productos de otras categorías. -->
+    <section class="contenedor catalogo">
+      <span class="ancla" id="tablas"></span>
+      <span class="ancla" id="ruedas"></span>
+      <span class="ancla" id="trucks"></span>
+      <span class="ancla" id="completos"></span>
+      <span class="ancla" id="ropa"></span>
+      <span class="ancla" id="accesorios"></span>
+
+      <nav class="filtros" aria-label="Filtrar por categoría">
+        <a href="#catalogo" class="chip chip--todos">Todos</a>
+        <a href="#tablas" class="chip chip--tablas">Tablas</a>
+        <a href="#ruedas" class="chip chip--ruedas">Ruedas</a>
+        <a href="#trucks" class="chip chip--trucks">Trucks</a>
+        <a href="#completos" class="chip chip--completos">Completos</a>
+        <a href="#ropa" class="chip chip--ropa">Ropa</a>
+        <a href="#accesorios" class="chip chip--accesorios">Accesorios</a>
+      </nav>
+
+      <div class="productos" id="catalogo">
+
+        <article class="producto" data-cat="tablas">
+          <div class="producto__imagen">
+            <img src="img/baker-wall.jpg" alt="Tablas Baker en pared de exhibición" loading="lazy">
+            <span class="producto__badge">Top</span>
+          </div>
+          <div class="producto__info">
+            <span class="producto__marca">Baker</span>
+            <h3 class="producto__nombre">Tabla Baker Logo</h3>
+            <p class="producto__detalle">8.0" · 8.25" · 8.5"</p>
+            <div class="producto__pie">
+              <span class="producto__precio">$65.00</span>
+              <a href="https://ig.me/m/addikt_es" target="_blank" rel="noopener" class="producto__btn">Pedir por DM</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="producto" data-cat="tablas">
+          <div class="producto__imagen">
+            <img src="img/santa-cruz.jpg" alt="Tablas Santa Cruz Screaming Hand" loading="lazy">
+            <span class="producto__badge">Nuevo</span>
+          </div>
+          <div class="producto__info">
+            <span class="producto__marca">Santa Cruz</span>
+            <h3 class="producto__nombre">Tabla Screaming Hand</h3>
+            <p class="producto__detalle">8.25" · 8.5"</p>
+            <div class="producto__pie">
+              <span class="producto__precio">$70.00</span>
+              <a href="https://ig.me/m/addikt_es" target="_blank" rel="noopener" class="producto__btn">Pedir por DM</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="producto" data-cat="tablas">
+          <div class="producto__imagen">
+            <img src="img/workshop.jpg" alt="Tablas Alien Workshop" loading="lazy">
+          </div>
+          <div class="producto__info">
+            <span class="producto__marca">Alien Workshop</span>
+            <h3 class="producto__nombre">Tabla Visitor</h3>
+            <p class="producto__detalle">8.0" · 8.25"</p>
+            <div class="producto__pie">
+              <span class="producto__precio">$68.00</span>
+              <a href="https://ig.me/m/addikt_es" target="_blank" rel="noopener" class="producto__btn">Pedir por DM</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="producto" data-cat="tablas">
+          <div class="producto__imagen">
+            <img src="img/tablas-dark.jpg" alt="Tablas Primitive serie pro" loading="lazy">
+            <span class="producto__badge">Nuevo</span>
+          </div>
+          <div class="producto__info">
+            <span class="producto__marca">Primitive</span>
+            <h3 class="producto__nombre">Tabla Pro Series</h3>
+            <p class="producto__detalle">8.125" · 8.38"</p>
+            <div class="producto__pie">
+              <span class="producto__precio">$72.00</span>
+              <a href="https://ig.me/m/addikt_es" target="_blank" rel="noopener" class="producto__btn">Pedir por DM</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="producto" data-cat="tablas">
+          <div class="producto__imagen">
+            <img src="img/tablas-art.jpg" alt="Tablas con gráficos de artista" loading="lazy">
+          </div>
+          <div class="producto__info">
+            <span class="producto__marca">Artist Series</span>
+            <h3 class="producto__nombre">Tabla Edición Artista</h3>
+            <p class="producto__detalle">8.25" · 8.5"</p>
+            <div class="producto__pie">
+              <span class="producto__precio">$68.00</span>
+              <a href="https://ig.me/m/addikt_es" target="_blank" rel="noopener" class="producto__btn">Pedir por DM</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="producto" data-cat="ruedas">
+          <div class="producto__imagen">
+            <img src="img/ruedas-pig.jpg" alt="Ruedas Pig Wheels" loading="lazy">
+          </div>
+          <div class="producto__info">
+            <span class="producto__marca">Pig Wheels</span>
+            <h3 class="producto__nombre">Ruedas Prime</h3>
+            <p class="producto__detalle">52mm · 53mm · 101A</p>
+            <div class="producto__pie">
+              <span class="producto__precio">$45.00</span>
+              <a href="https://ig.me/m/addikt_es" target="_blank" rel="noopener" class="producto__btn">Pedir por DM</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="producto" data-cat="trucks">
+          <div class="producto__imagen">
+            <img src="img/trucks.jpg" alt="Trucks Slappy" loading="lazy">
+            <span class="producto__badge">Top</span>
+          </div>
+          <div class="producto__info">
+            <span class="producto__marca">Slappy</span>
+            <h3 class="producto__nombre">Trucks ST1 (par)</h3>
+            <p class="producto__detalle">8.0" · 8.25" · 8.5"</p>
+            <div class="producto__pie">
+              <span class="producto__precio">$75.00</span>
+              <a href="https://ig.me/m/addikt_es" target="_blank" rel="noopener" class="producto__btn">Pedir por DM</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="producto" data-cat="completos">
+          <div class="producto__imagen">
+            <img src="img/completos.jpg" alt="Skates completos Enjoi" loading="lazy">
+          </div>
+          <div class="producto__info">
+            <span class="producto__marca">Enjoi</span>
+            <h3 class="producto__nombre">Completo Panda</h3>
+            <p class="producto__detalle">7.75" · Listo para rodar</p>
+            <div class="producto__pie">
+              <span class="producto__precio">$120.00</span>
+              <a href="https://ig.me/m/addikt_es" target="_blank" rel="noopener" class="producto__btn">Pedir por DM</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="producto" data-cat="ropa">
+          <div class="producto__imagen">
+            <img src="img/hoodie.jpg" alt="Hoodie negro Spitfire Live to Burn" loading="lazy">
+          </div>
+          <div class="producto__info">
+            <span class="producto__marca">Spitfire</span>
+            <h3 class="producto__nombre">Hoodie Live to Burn</h3>
+            <p class="producto__detalle">S · M · L · XL</p>
+            <div class="producto__pie">
+              <span class="producto__precio">$70.00</span>
+              <a href="https://ig.me/m/addikt_es" target="_blank" rel="noopener" class="producto__btn">Pedir por DM</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="producto" data-cat="ropa">
+          <div class="producto__imagen">
+            <img src="img/gorros.jpg" alt="Beanies Spitfire en varios colores" loading="lazy">
+            <span class="producto__badge">Nuevo</span>
+          </div>
+          <div class="producto__info">
+            <span class="producto__marca">Spitfire</span>
+            <h3 class="producto__nombre">Beanie Bighead</h3>
+            <p class="producto__detalle">Varios colores</p>
+            <div class="producto__pie">
+              <span class="producto__precio">$28.00</span>
+              <a href="https://ig.me/m/addikt_es" target="_blank" rel="noopener" class="producto__btn">Pedir por DM</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="producto" data-cat="ropa">
+          <div class="producto__imagen">
+            <img src="img/gorras.jpg" alt="Gorras Spitfire" loading="lazy">
+          </div>
+          <div class="producto__info">
+            <span class="producto__marca">Spitfire</span>
+            <h3 class="producto__nombre">Gorra Snapback</h3>
+            <p class="producto__detalle">Talla única</p>
+            <div class="producto__pie">
+              <span class="producto__precio">$32.00</span>
+              <a href="https://ig.me/m/addikt_es" target="_blank" rel="noopener" class="producto__btn">Pedir por DM</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="producto" data-cat="ropa">
+          <div class="producto__imagen">
+            <img src="img/calcetines.jpg" alt="Calcetines Toy Machine" loading="lazy">
+          </div>
+          <div class="producto__info">
+            <span class="producto__marca">Toy Machine</span>
+            <h3 class="producto__nombre">Calcetines Sect Eye</h3>
+            <p class="producto__detalle">Talla única</p>
+            <div class="producto__pie">
+              <span class="producto__precio">$14.00</span>
+              <a href="https://ig.me/m/addikt_es" target="_blank" rel="noopener" class="producto__btn">Pedir por DM</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="producto" data-cat="ropa">
+          <div class="producto__imagen">
+            <img src="img/camisetas.jpg" alt="Camisetas negras con estampado" loading="lazy">
+          </div>
+          <div class="producto__info">
+            <span class="producto__marca">Addikt Selects</span>
+            <h3 class="producto__nombre">Camiseta Edición Banda</h3>
+            <p class="producto__detalle">S · M · L · XL</p>
+            <div class="producto__pie">
+              <span class="producto__precio">$30.00</span>
+              <a href="https://ig.me/m/addikt_es" target="_blank" rel="noopener" class="producto__btn">Pedir por DM</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="producto" data-cat="accesorios">
+          <div class="producto__imagen">
+            <img src="img/spitfire-belt.jpg" alt="Cinturón Spitfire" loading="lazy">
+          </div>
+          <div class="producto__info">
+            <span class="producto__marca">Spitfire</span>
+            <h3 class="producto__nombre">Cinturón Bighead</h3>
+            <p class="producto__detalle">Ajustable</p>
+            <div class="producto__pie">
+              <span class="producto__precio">$25.00</span>
+              <a href="https://ig.me/m/addikt_es" target="_blank" rel="noopener" class="producto__btn">Pedir por DM</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="producto" data-cat="accesorios">
+          <div class="producto__imagen">
+            <img src="img/prime8.jpg" alt="Herramienta compacta Prime8" loading="lazy">
+          </div>
+          <div class="producto__info">
+            <span class="producto__marca">Prime8</span>
+            <h3 class="producto__nombre">Compact Skate Tool</h3>
+            <p class="producto__detalle">Llave multiuso de bolsillo</p>
+            <div class="producto__pie">
+              <span class="producto__precio">$20.00</span>
+              <a href="https://ig.me/m/addikt_es" target="_blank" rel="noopener" class="producto__btn">Pedir por DM</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+
+      <p class="catalogo__nota">* Precios de referencia en USD. Disponibilidad y tallas sujetas a existencias en tienda.</p>
+    </section>
+
+    <!-- ===================== CÓMO COMPRAR ===================== -->
+    <section class="seccion como-comprar">
+      <div class="contenedor">
+        <span class="seccion__etiqueta">Cómo comprar</span>
+        <h2 class="seccion__titulo">Tres pasos y a rodar.</h2>
+
+        <ol class="pasos">
+          <li class="paso">
+            <span class="paso__numero">01</span>
+            <h3>Elige</h3>
+            <p>Encuentra lo que buscas en el catálogo o en nuestro Instagram.</p>
+          </li>
+          <li class="paso">
+            <span class="paso__numero">02</span>
+            <h3>Escríbenos</h3>
+            <p>Mándanos un DM con el producto, talla o medida que necesitas.</p>
+          </li>
+          <li class="paso">
+            <span class="paso__numero">03</span>
+            <h3>Recibe o recoge</h3>
+            <p>Te lo enviamos a cualquier parte del país o pasa por él a la tienda.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="contenedor">
+      <div class="footer__grid">
+        <div class="footer__marca">
+          <a href="index.html" class="logo">
+            <span class="logo__palabra">Addikt<span class="logo__punto">.</span></span>
+            <span class="logo__lema">Skateshop since 2001</span>
+          </a>
+          <p>Desde el 2001 se habla skateboarding. El Salvador.</p>
+          <div class="footer__redes">
+            <a href="https://www.instagram.com/addikt_es/" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+            </a>
+            <a href="https://youtu.be/wP2s3ioDjSQ" target="_blank" rel="noopener" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.7 15V9l5.8 3-5.8 3z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__titulo">Tienda</h4>
+          <ul class="footer__lista">
+            <li><a href="productos.html#tablas">Tablas</a></li>
+            <li><a href="productos.html#ruedas">Ruedas</a></li>
+            <li><a href="productos.html#trucks">Trucks</a></li>
+            <li><a href="productos.html#ropa">Ropa</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer__titulo">Info</h4>
+          <ul class="footer__lista">
+            <li><a href="index.html#nosotros">Nosotros</a></li>
+            <li><a href="index.html#visitanos">Ubicación</a></li>
+            <li><a href="index.html#visitanos">Horarios</a></li>
+            <li><a href="index.html#visitanos">Envíos</a></li>
+            <li><a href="index.html#preguntas">Preguntas frecuentes</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer__titulo">Contacto</h4>
+          <ul class="footer__lista">
+            <li>Edificio CM, 3er nivel, local #6</li>
+            <li>El Salvador</li>
+            <li><a href="https://ig.me/m/addikt_es" target="_blank" rel="noopener">DM en Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__legal">
+        <span>© <span data-anio>2026</span> Addikt Skateshop. Todos los derechos reservados.</span>
+        <span>Skateshop since 2001 · SV</span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://ig.me/m/addikt_es" target="_blank" rel="noopener" class="dm-flotante" aria-label="Enviar mensaje por Instagram">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"/></svg>
+    <span>Mensajes</span>
+  </a>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
