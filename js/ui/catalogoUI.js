@@ -87,6 +87,8 @@ function ordenarProductos(lista) {
       return copia.sort((a, b) => b.precio - a.precio);
     case "nombre":
       return copia.sort((a, b) => a.nombre.localeCompare(b.nombre));
+    case "stock" :
+      return copia.sort((a, b) => b.stock - a.stock);
     default: // por categoría y luego por nombre
       return copia.sort(
         (a, b) =>

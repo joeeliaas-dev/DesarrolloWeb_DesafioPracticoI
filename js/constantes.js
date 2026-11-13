@@ -12,6 +12,7 @@ export const CATEGORIAS = {
   completos: "Completos",
   ropa: "Ropa",
   accesorios: "Accesorios",
+  baleros: "Baleros"
 };
 
 // Regla "Arma tu skate": tabla + trucks + ruedas en el carrito
