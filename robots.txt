@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /carrito
+Disallow: /login
+Disallow: /mis-reservas
+
+Sitemap: https://addikt.web.app/sitemap.xml

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página no encontrada | Addikt Skateshop</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/base.css">
+  <style>
+    .error {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 32px 16px;
+      text-align: center;
+    }
+
+    .error__codigo {
+      font-family: var(--fuente-titulo);
+      font-weight: 800;
+      font-size: clamp(6rem, 24vw, 12rem);
+      line-height: 0.9;
+      letter-spacing: -0.06em;
+    }
+
+    .error__codigo span {
+      color: var(--rojo);
+    }
+
+    .error p {
+      color: var(--crema-2);
+      max-width: 40ch;
+    }
+  </style>
+</head>
+<body>
+  <main class="error">
+    <a href="/" class="logo">
+      <span class="logo__palabra">Addikt<span class="logo__punto">.</span></span>
+      <span class="logo__lema">Skateshop since 2001</span>
+    </a>
+    <h1 class="error__codigo">404<span>.</span></h1>
+    <p>Te caíste en este truco: la página que buscas no existe o se movió.</p>
+    <a href="/" class="btn btn--primario">Volver al inicio</a>
+  </main>
+</body>
+</html>
